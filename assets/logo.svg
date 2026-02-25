@@ -1,0 +1,8 @@
+<svg width="640" height="180" viewBox="0 0 640 180" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">enbasic-js logo</title>
+  <desc id="desc">A simple wordmark for the enbasic-js project.</desc>
+  <rect width="640" height="180" rx="24" fill="#F4F7F2"/>
+  <rect x="24" y="24" width="132" height="132" rx="20" fill="#0B4F6C"/>
+  <path d="M58 60H122V78H76V94H116V112H76V120H124V138H58V60Z" fill="#FFFFFF"/>
+  <text x="182" y="102" fill="#0B4F6C" font-family="'Trebuchet MS', 'Segoe UI', sans-serif" font-size="58" font-weight="700">enbasic-js</text>
+</svg>

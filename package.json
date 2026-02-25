@@ -1,0 +1,50 @@
+{
+  "name": "enbasic-js",
+  "version": "0.1.0",
+  "description": "Validate text against Ogden's Basic English word list.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LucianBuzzo/enbasic-js.git"
+  },
+  "homepage": "https://github.com/LucianBuzzo/enbasic-js#readme",
+  "bugs": {
+    "url": "https://github.com/LucianBuzzo/enbasic-js/issues"
+  },
+  "main": "index.js",
+  "types": "index.d.ts",
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "en-basic.js",
+    "basic_english_wordlist.json",
+    "basic_english_wordlist.txt",
+    "revised-basic-lib",
+    "revised-basic-lib.json",
+    "assets/logo.svg",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "prepare": "husky",
+    "lint": "biome lint .",
+    "lint:fix": "biome lint --write .",
+    "format": "biome format --write .",
+    "test": "jest --runInBand"
+  },
+  "keywords": [
+    "basic-english",
+    "readability",
+    "validator"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
+    "husky": "^9.1.7",
+    "jest": "^30.0.0"
+  }
+}
