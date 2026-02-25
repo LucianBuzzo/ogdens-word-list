@@ -30,7 +30,9 @@
     "lint": "biome lint .",
     "lint:fix": "biome lint --write .",
     "format": "biome format --write .",
-    "test": "jest --runInBand"
+    "test": "jest --runInBand",
+    "test:coverage": "jest --runInBand --coverage",
+    "prepublishOnly": "npm run lint && npm test"
   },
   "keywords": [
     "basic-english",

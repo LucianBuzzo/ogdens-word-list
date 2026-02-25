@@ -3,9 +3,12 @@
 
 
   var wordRegexp = /\w+/g;
+  var basic_english_wordset = new Set(basic_english_wordlist.map(function(word) {
+    return String(word).toLowerCase();
+  }));
 
-  function include(arr, name) {
-    return (arr.indexOf(name) != -1);
+  function include(name) {
+    return basic_english_wordset.has(String(name).toLowerCase());
   }
   function getWords(str) {
     return str.match(wordRegexp) || [];
@@ -15,7 +18,7 @@
     var words = getWords(str);
     var matches = [];
     words.forEach(function(word) {
-      if ( !include(basic_english_wordlist, word) ) {
+      if ( !include(word) ) {
         matches.push(word);
       }
     });

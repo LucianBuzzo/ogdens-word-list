@@ -11,6 +11,10 @@ describe('enBasic', () => {
     );
   });
 
+  test('check is case-insensitive for known basic words', () => {
+    expect(enBasic.check('Cat DOG')).toEqual([]);
+  });
+
   test('check handles empty input', () => {
     expect(enBasic.check('')).toEqual([]);
   });

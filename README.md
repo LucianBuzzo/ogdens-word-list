@@ -10,7 +10,7 @@
 
 The library exposes two functions:
 
-- `check(text)`: returns words not found in the Basic English list.
+- `check(text)`: returns words not found in the Basic English list (case-insensitive matching for known words).
 - `highlight(text)`: returns HTML with non-matching words wrapped in an underline `<span>`.
 
 ## Install
@@ -47,6 +47,7 @@ Browser usage is still supported with the bundled script:
 - `npm run lint:fix`: apply Biome lint fixes where possible.
 - `npm run format`: format supported files with Biome.
 - `npm test`: run Jest tests.
+- `npm run test:coverage`: run Jest with coverage thresholds.
 - `npm run prepare`: enable git hooks with Husky.
 
 ## Development workflow
@@ -65,8 +66,11 @@ This repository uses Commitlint with conventional commit rules.
 
 ## Release process
 
-Releases are managed with Release Please via GitHub Actions:
+Releases are managed with Release Please + automated npm publish via GitHub Actions:
 
 1. Merge conventional commits into `main` or `master`.
 2. Release Please opens/updates a release PR with version and changelog updates.
-3. Merge the release PR to create the GitHub release and npm-ready version bump metadata.
+3. Merge the release PR to create a GitHub release.
+4. On release publish, `.github/workflows/publish.yml` runs lint/tests and publishes to npm.
+
+> To enable publishing, set the `NPM_TOKEN` repository secret.
