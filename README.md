@@ -1,10 +1,10 @@
 <p align="center">
-  <img src="assets/logo.svg" alt="enbasic-js logo" width="640" />
+  <img src="assets/logo.svg" alt="ogdens-word-list logo" width="640" />
 </p>
 
-# enbasic-js
+# ogdens-word-list
 
-`enbasic-js` checks text against Ogden's Basic English word list so you can quickly spot words that may reduce readability.
+`ogdens-word-list` checks text against Ogden's Basic English word list so you can quickly spot words that may reduce readability.
 
 ## Project overview
 
@@ -16,13 +16,13 @@ The library exposes two functions:
 ## Install
 
 ```bash
-npm install enbasic-js
+npm install ogdens-word-list
 ```
 
 ## Usage
 
 ```js
-const enBasic = require('enbasic-js');
+const enBasic = require('ogdens-word-list');
 
 const text = 'cat kubernetes dog';
 const unsupported = enBasic.check(text);

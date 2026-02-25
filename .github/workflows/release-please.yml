@@ -20,5 +20,5 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           release-type: node
-          package-name: enbasic-js
+          package-name: ogdens-word-list
           target-branch: ${{ github.ref_name }}
