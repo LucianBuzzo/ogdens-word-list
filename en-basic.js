@@ -8,7 +8,7 @@
     return (arr.indexOf(name) != -1);
   }
   function getWords(str) {
-    return str.match(wordRegexp);
+    return str.match(wordRegexp) || [];
   }
 
   function check(str) {
@@ -28,7 +28,7 @@
       return str;
     }
     var wrap = '<span style="text-decoration: underline;">$1</span>';
-    var regexp = new RegExp('(' + words.join('|') + '|$)', 'gi');
+    var regexp = new RegExp('(' + words.join('|') + ')', 'gi');
     return str.replace(regexp, wrap);
   }
 
