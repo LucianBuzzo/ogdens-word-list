@@ -18,4 +18,16 @@ describe('enBasic', () => {
   test('check handles empty input', () => {
     expect(enBasic.check('')).toEqual([]);
   });
+
+  test('highlight does not partially match larger words', () => {
+    expect(enBasic.highlight('cat abc abcd dog')).toBe(
+      'cat <span style="text-decoration: underline;">abc</span> <span style="text-decoration: underline;">abcd</span> dog'
+    );
+  });
+
+  test('highlight handles repeated unknown words consistently', () => {
+    expect(enBasic.highlight('cat kubernetes kubernetes dog')).toBe(
+      'cat <span style="text-decoration: underline;">kubernetes</span> <span style="text-decoration: underline;">kubernetes</span> dog'
+    );
+  });
 });

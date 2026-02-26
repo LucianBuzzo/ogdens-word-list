@@ -25,13 +25,23 @@
     return matches;
   }
 
+  function escapeRegExp(word) {
+    return word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  }
+
   function highlight(str) {
     var words = check(str);
     if ( !words.length ) {
       return str;
     }
+    var uniqueWords = Array.from(new Set(words.map(function(word) {
+      return String(word).toLowerCase();
+    })));
+    uniqueWords.sort(function(a, b) {
+      return b.length - a.length;
+    });
     var wrap = '<span style="text-decoration: underline;">$1</span>';
-    var regexp = new RegExp('(' + words.join('|') + ')', 'gi');
+    var regexp = new RegExp('\\b(' + uniqueWords.map(escapeRegExp).join('|') + ')\\b', 'gi');
     return str.replace(regexp, wrap);
   }
 
