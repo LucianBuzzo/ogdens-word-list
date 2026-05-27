@@ -30,4 +30,8 @@ describe('enBasic', () => {
       'cat <span style="text-decoration: underline;">kubernetes</span> <span style="text-decoration: underline;">kubernetes</span> dog'
     );
   });
+
+  test('check treats known hyphenated words as valid', () => {
+    expect(enBasic.check('well-being x-ray')).toEqual([]);
+  });
 });
